@@ -19,9 +19,9 @@ public class Product {
 		do {
 			System.out.println("\t\tSUA THONG TIN SAN PHAM");
 			System.out.println("Chon mot thong tin can sua");
-			System.out.println("\t1. Sửa loại sản phẩm");
-			System.out.println("\t2. Sửa tên sản phẩm");
-			System.out.println("\t3. Sửa đơn giá");
+			System.out.println("\t1. Sua loai san pham");
+			System.out.println("\t2. Sua ten san pham");
+			System.out.println("\t3. Sua don gia");
 			System.out.println("\t0. Quay lai");
 			
 			System.out.print("Lua chon cua ban?: ");
@@ -29,17 +29,17 @@ public class Product {
 			
 			switch (choose) {
 			case 1: 
-				System.out.print("Chon chủng loại (nhap ma): ");
+				System.out.print("Chon chung loai (nhap ma): ");
 				String categoryCode = sc.nextLine();
 	
 				int vIndex = CategoryController.findIndexCategoryByCode(categoryCode);
 				if (vIndex == -1) {
-					System.out.println("Chủng loại không tồn tại!");
+					System.out.println("Chung loai khong ton tai!");
 					return;
 				}
 				int categoryId = CategoryController.getCategories().get(vIndex).getId();
 				this.setCategoryId(categoryId);
-				System.out.println("Sua chủng loại thanh cong!");
+				System.out.println("Sua chung loai thanh cong!");
 				break;
 			case 2:
 				System.out.print("Nhap ten san pham: ");

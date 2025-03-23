@@ -20,10 +20,10 @@ public class CartController {
 		do {
 			System.out.println("\n\t\tCAC THAO TAC VOI GIO HANG");
 			System.out.println("Moi quy khach chon thao tac");
-			System.out.println("\t1. Xem giỏ hàng");
-			System.out.println("\t2. Thêm hàng vào giỏ");
-			System.out.println("\t3. Xóa hàng khỏi giỏ");
-			System.out.println("\t4. Sửa số lượng hàng trong giỏ");
+			System.out.println("\t1. Xem gio hang");
+			System.out.println("\t2. Them hang vao gio");
+			System.out.println("\t3. Xoa hang khoi gio");
+			System.out.println("\t4. Sua so luong hang trong gio");
 			System.out.println("\t5. Dat hang");
 			System.out.println("\t0. Quay lai");
 
@@ -58,9 +58,9 @@ public class CartController {
 	public static void display(Cart cart) {
 		System.out.println("\n\t\tGIO HANG CUA BAN");
 		String customerName = CustomerController.getNameById(cart.getCustomerId());
-		System.out.println("\tTên khách hàng: " + customerName);
+		System.out.println("\tTen khach hang: " + customerName);
 		String phoneNumber = CustomerController.getPhoneNumberById(cart.getCustomerId());
-		System.out.println("\tSố điện thoại khách hàng: " + phoneNumber);
+		System.out.println("\tSo dien thoai khach hang: " + phoneNumber);
 		if (cart.totalCartProducts() <= 0) {
 			System.out.println("\tGio hang cua ban chua co san pham nao");
 			return;
@@ -111,7 +111,7 @@ public class CartController {
 
 	private static void remove(Cart cart) {
 		// TODO Auto-generated method stub
-		System.out.println("\n\t\tXoa hang khoi GIO");
+		System.out.println("\n\t\tXOA HANG KHOI GIO");
 		System.out.print("Chon san pham can xoa (nhap ma sp): ");
 		String code = sc.nextLine();
 		// Tim xem sp co trong ds sp khong?
@@ -128,13 +128,13 @@ public class CartController {
 			return;
 		}
 		cart.getProductCarts().remove(cartIndex);
-		System.out.println("\t Xoa san pham thanh cong");
+		System.out.println("\tXoa san pham thanh cong");
 
 	}
 
 	private static void edit(Cart cart) {
 		// TODO Auto-generated method stub
-		System.out.println("\n\t\tsua so luong hang trong GIO");
+		System.out.println("\n\t\tSUA SO LUONG HANG TRONG GIO");
 		System.out.print("Chon san pham can sua (nhap ma sp): ");
 		String code = sc.nextLine();
 		// Tim xem sp co trong ds sp khong?
@@ -165,7 +165,7 @@ public class CartController {
 			System.out.println("Chua co hang trong gio!");
 			return;
 		}
-		System.out.println("\n-----Thanh Toan Gio Hang-----");
+		System.out.println("\n-----THANH TOAN GIO HANG-----");
 		System.out.print("\tNhap ma khach hang:");
 		String codeCustomer = sc.nextLine();
 		int index1 = CustomerController.findIndexCustomerByCode(codeCustomer);
@@ -181,10 +181,10 @@ public class CartController {
 					System.out.println("Ten KH khong duoc de trong");
 					return;
 				}
-				System.out.print("Nhap số điện thoại khách hàng: ");
+				System.out.print("Nhap so dien thoai khach hang: ");
 				phoneNumber = sc.nextLine();
 				if (!phoneNumber.matches("[0-9]{8,15}")) {
-			        System.out.println("So dien thoai chi duoc chua so và có độ dài từ 8 đến 15 ký tự");
+			        System.out.println("So dien thoai chi duoc chua so va co do dai tu 8 den 15 ky tu");
 			        return;
 			    }
 			}

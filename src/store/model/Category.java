@@ -12,14 +12,14 @@ public class Category {
     }
     public void edit() {
     	Scanner sc = new Scanner(System.in);
-    	System.out.print("Nhập tên chủng loại: ");
+    	System.out.print("Nhap ten chung loai: ");
     	String name = sc.nextLine();
     	if (name == null || name.isEmpty()) {
-    		System.out.println("Tên không đc để trống");
+    		System.out.println("Ten khong duoc de trong");
     		return;
     	}
     	this.setName(name);
-    	System.out.println("Sửa thành công");
+    	System.out.println("Sua thanh cong");
     }
 	public Category() {
 		super();

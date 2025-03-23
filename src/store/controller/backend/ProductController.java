@@ -45,17 +45,17 @@ public class ProductController {
 	public static void menu() {
 
 		do {
-			System.out.println("\n\t\tCAP NHAT THONG TIN SAN PHAM	");
+			System.out.println("\n\t\tCAP NHAT THONG TIN SAN PHAM");
 			System.out.println("Chon mot chuc nang quan ly");
 			System.out.println("\t1. Hien thi danh sach san pham");
 			System.out.println("\t2. Them san pham moi");
 			System.out.println("\t3. Sua thong tin san pham");
 			System.out.println("\t4. Xoa thong tin san pham");
 			System.out.println("\t5. Sap xep danh sach san pham");
-			System.out.println("\t6. Tìm kiếm sản phẩm theo từ khóa");
-			System.out.println("\t0. Quay lại");
+			System.out.println("\t6. Tim kiem san pham theo tu khoa");
+			System.out.println("\t0. Quay lai");
 
-			System.out.print("Lựa chọn của bạn?: ");
+			System.out.print("Lua chon cua ban?: ");
 			int choose = Integer.parseInt(sc.nextLine());
 
 			switch (choose) {
@@ -87,13 +87,12 @@ public class ProductController {
 	}
 
 	private static void search() {
-		// TODO Auto-generated method 
-		   boolean check = false;
-		  String name;
-		  System.out.println("Nhập tên sản phẩm cần tìm: ");
-		  name = sc.nextLine();
-			System.out.printf("%3s %-20s %-10s %-30s %-15s%n", "ID", 
-					"Tên Chủng loại", "Mã sản phẩm", "Tên sản phẩm", "Đơn giá");
+		boolean check = false;
+		String name;
+		System.out.println("Nhap ten san pham can tim: ");
+		name = sc.nextLine();
+		System.out.printf("%3s %-20s %-10s %-30s %-15s%n", "ID", 
+				"Ten Chung loai", "Ma san pham", "Ten san pham", "Don gia");
 		for(Product product: products) {
 			if(product.getName().toLowerCase().contains(name.toLowerCase())) {
 				product.display();
@@ -101,14 +100,14 @@ public class ProductController {
 			}
 		}
 		if (!check) {
-	        System.out.println("Không tìm thấy sản phẩm nào có tên chứa '" + name + "'");
+	        System.out.println("Khong tim thay san pham nao co ten chua '" + name + "'");
 	    }
 	}
 
 	private static void display() {
 		System.out.println("\n\t\tDANH SACH SAN PHAM");
 		System.out.printf("%3s %-20s %-10s %-30s %-15s%n", "ID", 
-				"Tên Chủng loại", "Mã sản phẩm", "Tên sản phẩm", "Đơn giá");
+				"Ten Chung loai", "Ma san pham", "Ten san pham", "Don gia");
 		for (Product product : products) {
 			product.display();
 		}		
@@ -117,11 +116,11 @@ public class ProductController {
 	private static void add() {
 		System.out.println("\t\t\nTHEM MOI SAN PHAM");
 		
-		System.out.print("Chon Mã chủng loại (nhap ma): ");
+		System.out.print("Chon Ma chung loai (nhap ma): ");
 		String categoryCode = sc.nextLine();
 		int vIndex = CategoryController.findIndexCategoryByCode(categoryCode);
 		if (vIndex == -1) {
-			System.out.println("Chủng loại khong ton tai!");
+			System.out.println("Chung loai khong ton tai!");
 			return;
 		}
 		

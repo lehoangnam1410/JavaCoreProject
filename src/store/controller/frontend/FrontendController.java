@@ -9,8 +9,8 @@ public class FrontendController {
 		do {
 			System.out.println("\n\t\tCHUC NANG DANH CHO KHACH HANG");
 			System.out.println("Moi quy khach chon chuc nang");
-			System.out.println("\t1. Xem danh sách sản phẩm của cửa hàng");
-			System.out.println("\t2. Quản lý giỏ hàng");
+			System.out.println("\t1. Xem danh sach san pham cua cua hang");
+			System.out.println("\t2. Quan ly gio hang");
 			System.out.println("\t0. Quay lai");
 			
 			System.out.print("Lua chon cua ban?: ");

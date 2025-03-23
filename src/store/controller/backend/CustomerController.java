@@ -29,22 +29,22 @@ public class CustomerController {
 
 	public static int autoId = 1;
 	public static void init() {
-		customers.add(new Customer(autoId++, "10001","Nguyễn văn tài","0384490724"));
-		customers.add(new Customer(autoId++, "10002","Lê Văn Đại","0384493724"));
-		customers.add(new Customer(autoId++, "10003","Nguyễn Thái Huy","0384490725"));
-		customers.add(new Customer(autoId++, "10004","Đặng Tiến Việt","0384490726"));
-		customers.add(new Customer(autoId++, "10005","Trương Tam Phong","0384490727"));
+		customers.add(new Customer(autoId++, "10001","Nguyen Van Tai","0384490724"));
+		customers.add(new Customer(autoId++, "10002","Le Van Dai","0384493724"));
+		customers.add(new Customer(autoId++, "10003","Nguyen Thai Huy","0384490725"));
+		customers.add(new Customer(autoId++, "10004","Dang Tien Viet","0384490726"));
+		customers.add(new Customer(autoId++, "10005","Truong Tam Phong","0384490727"));
 		
 	}
 	public static void menuSystemCategory() {
 		do {
-			System.out.println("\n-------CẬP NHẬT THÔNG TIN KHÁCH HÀNG--------");
+			System.out.println("\n-------CAP NHAT THONG TIN KHACH HANG--------");
 			System.out.println("Chon chuc nang cap nhat thong tin");
-			System.out.println("\t1. Xem danh sach khách hàng");
-			System.out.println("\t2. Them khách hàng moi");
-			System.out.println("\t3. Sua thong tin khách hàng");
-			System.out.println("\t4. Xoa thong tin khách hàng");
-			System.out.println("\t5. Sap xep danh sach khách hàng");
+			System.out.println("\t1. Xem danh sach khach hang");
+			System.out.println("\t2. Them khach hang moi");
+			System.out.println("\t3. Sua thong tin khach hang");
+			System.out.println("\t4. Xoa thong tin khach hang");
+			System.out.println("\t5. Sap xep danh sach khach hang");
 			System.out.println("\t0. Quay lai");
 			
 			System.out.print("Lua chon cua ban: ");
@@ -64,32 +64,30 @@ public class CustomerController {
 		}while(true);
 	}
 	private static void display() {
-		// TODO Auto-generated method stub
-		System.out.println("\t\tDanh sách khách hàng");
-		System.out.printf("%-3s %-12s %-35s %-35s %n", "ID", "Code", "Tên","Số điện thoại");
+		System.out.println("\t\tDanh sach khach hang");
+		System.out.printf("%-3s %-12s %-35s %-35s %n", "ID", "Code", "Ten","So dien thoai");
 		for(Customer x: customers) {
 			x.display();
 		}
 	}
 	private static void add() {
-		// TODO Auto-generated method stub
-		System.out.println("\n--------Nhập khách hàng mới-------");
-		System.out.print("Tên cua khách hàng:");
+		System.out.println("\n--------Nhap khach hang moi-------");
+		System.out.print("Ten cua khach hang:");
 		String name = sc.nextLine();
 		if(name.trim().length()==0) {
 			System.out.println("\tKhong duoc de trong Ten!");
 			return;
 		}
-		System.out.print("Nhập số điện thoại khách hàng: ");
+		System.out.print("Nhap so dien thoai khach hang: ");
 		String phoneNumber = sc.nextLine();
 		if (phoneNumber == null || phoneNumber.isEmpty()) {
-			System.out.println("số điện thoại không được để trống");
+			System.out.println("So dien thoai khong duoc de trong");
 			return;
 		}
 		if (!phoneNumber.matches("[0-9]{8,15}")) {
-	        System.out.println("So dien thoai chi duoc chua so và có độ dài từ 8 đến 15 ký tự");
-	        return;
-	    }
+			System.out.println("So dien thoai chi duoc chua so va co do dai tu 8 den 15 ky tu");
+			return;
+		}
 		customers.add(new Customer(autoId,"1000"+autoId, name,phoneNumber));
 		autoId++;
 		System.out.println("\tThem moi thanh cong!");
@@ -105,24 +103,24 @@ public class CustomerController {
 		return -1;
 	}
 	private static void edit() {
-		System.out.println("\t\t\nSửa thông tin khách hàng");
-		System.out.print("Chon khách hàng cần sửa (nhập mã khách hàng): ");
+		System.out.println("\t\t\nSua thong tin khach hang");
+		System.out.print("Chon khach hang can sua (nhap ma khach hang): ");
 		String code = sc.nextLine();
 		int index = findIndexCustomerByCode(code);
 		if (index == -1) {
-			System.out.println("Khách hàng này không tồn tại trong hệ thống");
+			System.out.println("Khach hang nay khong ton tai trong he thong");
 			return;
 		}
 		customers.get(index).edit();
 	}
 
 	private static void delete() {
-		System.out.println("\t\t\nxóa thông tin khách hàng");
-		System.out.print("Chon khách hàng cần xóa (nhập mã): ");
+		System.out.println("\t\t\nXoa thong tin khach hang");
+		System.out.print("Chon khach hang can xoa (nhap ma): ");
 		String code = sc.nextLine();
 		int index = findIndexCustomerByCode(code);
 		if (index == -1) {
-			System.out.println("Khách hàng này không tồn tại trong hệ thống");
+			System.out.println("Khach hang nay khong ton tai trong he thong");
 			return;
 		}
 		customers.remove(index);

@@ -12,15 +12,15 @@ public class Order {
 	private String code;
 	public void display() {
 		//System.out.println("\nID:"+this.id);
-		System.out.println("\nTên khách hàng: "+CustomerController.getNameById(customerId));
-		System.out.println("Số điện thoại khách hàng: "+CustomerController.getPhoneNumberById(customerId));
-		System.out.println("Mã đơn hàng: "+this.code);
+		System.out.println("\nTen khach hang: " + CustomerController.getNameById(customerId));
+		System.out.println("So dien thoai khach hang: " + CustomerController.getPhoneNumberById(customerId));
+		System.out.println("Ma don hang: " + this.code);
 		List<ProductInOrder> productInOrders = ProductInOrderController.getListProductByIdOrder(id);
-		System.out.printf("%-20s %-8s %-15s %-15s \n","Tên sản phẩm","Số lượng","Đơn giá","Thành tiền");
+		System.out.printf("%-20s %-8s %-15s %-15s \n", "Ten san pham", "So luong", "Don gia", "Thanh tien");
 		for(ProductInOrder productInOrder : productInOrders) {
 			productInOrder.display();
 		}
-		System.out.printf("Tổng giá trị đơn hàng: %.2f\n",totalOrderPrice());
+		System.out.printf("Tong gia tri don hang: %.2f\n", totalOrderPrice());
 		
 	}
 	public double totalOrderPrice() {

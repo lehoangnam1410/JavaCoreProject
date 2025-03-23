@@ -33,40 +33,40 @@ import store.model.ProductInOrder;
 
 public class Main {
     public static void main(String[] args) {
-    	CategoryController.init();
-    	CustomerController.init();
-    	ProductController.init();
-    	ProductInOrderController.init();
-    	OrderController.init();
-    	Scanner sc = new Scanner(System.in);
-    	 do {
-        	 System.out.println("\n---------------Chương trình quản lý bán hàng----------------");
-        	 System.out.println("Chọn tính năng người dùng");
-             System.out.println("1.Cập nhật thông tin hệ thống");
-             System.out.println("2.Quản lý phiên giao dịch của khách hàng(quản lý giỏ hàng, tạo đơn hàng)");
-             System.out.println("3.Quản lý đơn hàng và doanh thu");
-             System.out.println("0.Đóng chương trình");
-             System.out.print("Nhập lựa chọn: ");
+        CategoryController.init();
+        CustomerController.init();
+        ProductController.init();
+        ProductInOrderController.init();
+        OrderController.init();
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("\n---------------Chuong trinh quan ly ban hang----------------");
+            System.out.println("Chon tinh nang nguoi dung");
+            System.out.println("1.Cap nhat thong tin he thong");
+            System.out.println("2.Quan ly phien giao dich cua khach hang(quan ly gio hang, tao don hang)");
+            System.out.println("3.Quan ly don hang va doanh thu");
+            System.out.println("0.Dong chuong trinh");
+            System.out.print("Nhap lua chon: ");
             int choose = Integer.parseInt(sc.nextLine());
 
             switch (choose) {
                 case 1: {
-                	BackendController.menuUpdateSystemInformation();
+                    BackendController.menuUpdateSystemInformation();
                     break;
                 }
                 case 2: {
-                	FrontendController.menu();
-                	break;
+                    FrontendController.menu();
+                    break;
                 }
                 case 3: {
-                	OrderController.menuManageOrdersAndRevenue();
+                    OrderController.menuManageOrdersAndRevenue();
                     break;
-                }            
-                case 0: {                
+                }
+                case 0: {
                     return;
                 }
                 default: {
-                    System.out.println("Không có lựa chọn nào phù hợp.");
+                    System.out.println("Khong co lua chon nao phu hop.");
                 }
             }
         } while (true);

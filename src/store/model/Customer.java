@@ -16,10 +16,10 @@ public class Customer {
 	public void edit() {
 		Scanner sc = new Scanner(System.in);
 		do {
-			System.out.println("\t\tSUA THONG TIN KHÁCH HÀNG");
+			System.out.println("\t\tSUA THONG TIN KHACH HANG");
 			System.out.println("Chon mot thong tin can sua");
-			System.out.println("\t1. Sửa tên khách hàng");
-			System.out.println("\t2. Sửa số điện thoại");
+			System.out.println("\t1. Sua ten khach hang");
+			System.out.println("\t2. Sua so dien thoai");
 			System.out.println("\t0. Quay lai");
 			
 			System.out.print("Lua chon cua ban?: ");
@@ -37,16 +37,16 @@ public class Customer {
 				System.out.println("Sua ten khach hang thanh cong!");
 				break;
 			case 2:
-				System.out.print("Nhap số điện thoại khách hàng: ");
+				System.out.print("Nhap so dien thoai khach hang: ");
 				String phoneNumber = sc.nextLine();
 				if (phoneNumber == null || phoneNumber.isEmpty()) {
-					System.out.println("số điện thoại khong duoc de trong");
+					System.out.println("So dien thoai khong duoc de trong");
 					return;
 				}
 				if (!phoneNumber.matches("[0-9]{8,15}")) {
-			        System.out.println("So dien thoai chi duoc chua so và có độ dài từ 8 đến 15 ký tự");
-			        return;
-			    }
+					System.out.println("So dien thoai chi duoc chua so va co do dai tu 8 den 15 ky tu");
+					return;
+				}
 				this.setMobile(phoneNumber);
 				System.out.println("Sua thanh cong!");
 				break;

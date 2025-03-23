@@ -21,13 +21,12 @@ public class CategoryController {
 
 	public static int autoId = 1;
 	public static void init() {
-		categories.add(new Category(autoId++, "10001","Tai nghe"));
-		categories.add(new Category(autoId++, "10002","Điện thoại"));
-		categories.add(new Category(autoId++, "10003","Máy tính"));
-		categories.add(new Category(autoId++, "10004","Sạc"));
-		categories.add(new Category(autoId++, "10005","Chuột và bàn phím"));
-		
-	}
+        categories.add(new Category(autoId++, "10001","Tai nghe"));
+        categories.add(new Category(autoId++, "10002","Dien thoai"));
+        categories.add(new Category(autoId++, "10003","May tinh"));
+        categories.add(new Category(autoId++, "10004","Sac"));
+        categories.add(new Category(autoId++, "10005","Chuot va ban phim"));
+    }
 	public static void menuSystemCategory() {
 		do {
 			System.out.println("\n-------CAP NHAT THONG TIN CHUNG LOAI--------");
