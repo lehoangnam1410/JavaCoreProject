@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-import store.model.Category;
 import store.model.Customer;
 
 public class CustomerController {

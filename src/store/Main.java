@@ -9,8 +9,6 @@ import store.controller.backend.OrderController;
 import store.controller.backend.ProductController;
 import store.controller.backend.ProductInOrderController;
 import store.controller.frontend.FrontendController;
-import store.model.ProductInOrder;
-/* DANH SÁCH DỮ LIỆU KHỞI TẠO */
 
 /* Bảng category (Danh mục sản phẩm)                Bảng customer (Khách hàng)
  * ID   | CODE   | Name                              ID   | CODE   | Name              | Phone

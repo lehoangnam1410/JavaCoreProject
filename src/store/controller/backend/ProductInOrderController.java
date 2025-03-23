@@ -3,7 +3,6 @@ package store.controller.backend;
 import java.util.ArrayList;
 import java.util.List;
 
-import store.model.Order;
 import store.model.ProductInOrder;
 
 public class ProductInOrderController {

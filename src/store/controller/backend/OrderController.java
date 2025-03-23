@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import store.model.Customer;
 import store.model.Order;
 import store.model.ProductInOrder;
 
